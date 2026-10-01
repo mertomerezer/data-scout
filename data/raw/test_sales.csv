@@ -1,0 +1,7 @@
+product,category,quantity,unit_price
+Notebook,Stationery,10,2.5
+Pen,Stationery,25,0.8
+Desk,Furniture,2,120.0
+Chair,Furniture,4,75.0
+Pen,Stationery,25,0.8
+Binder,Stationery,,4.5
