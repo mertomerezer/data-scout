@@ -24,6 +24,7 @@ if df is not None:
     print("\nMissing values per column:")
     print(df.isna().sum())
     print('Duplicated rows:', df.duplicated().sum())
+    print(df.columns[df.isna().all()])
 
     print("\n=== COLUMN DETAILS ===")
     print("\nUnique values per column:")
