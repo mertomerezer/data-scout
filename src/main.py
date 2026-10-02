@@ -20,11 +20,27 @@ if df is not None:
     print("\nData types:")
     print(df.dtypes)
 
+
+
     print("\n=== DATA QUALITY ===")
     print("\nMissing values per column:")
     print(df.isna().sum())
     print('Duplicated rows:', df.duplicated().sum())
     print(df.columns[df.isna().all()])
+    print("\nColumns with only one unique value:")
+    print(df.columns[df.nunique() == 1].tolist())
+
+    text_columns = df.select_dtypes(include=["object","string"])
+    unique_ratios = text_columns.nunique()/len(df)
+    print(unique_ratios)    
+    if(unique_ratios > 0.8).any():
+        print("Warning : Some text columns have a high proportion of unique values.")
+
+     
+
+
+
+
 
     print("\n=== COLUMN DETAILS ===")
     print("\nUnique values per column:")
